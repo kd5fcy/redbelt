@@ -1,9 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<?php $user = $this->Bookdb->user_info(); ?>
-	<?php $book_reviews = $this->Bookdb->book_reviews(); ?>
-	<?php $book_count = $this->Bookdb->book_count(); ?>
+	<?php
+	if($this->session->userdata('user_id')){
+		 	$user = $this->Bookdb->user_info();
+			$book_reviews = $this->Bookdb->book_reviews();
+		 	$book_count = $this->Bookdb->book_count(); 
+	}
+	?>
 	<meta charset="utf-8">
 	<title><?php if($this->session->userdata('user_id')){echo $user['first_name'] . " " . $user['last_name'];} ?>'s Reviews</title>
 	<style type="text/css"></style>
