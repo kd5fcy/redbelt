@@ -1,13 +1,22 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <?php
+        $data = $this->Bookdb->book_info($id); 
+        foreach ($data as $row => $key) 
+        {
+            $book_name = $key->name;
+            $author = $key->author;
+        }
+    ?>
     <meta charset="utf-8">
-	<title>Add Book and Review</title>
-	<script src="<?php echo base_url(); ?>assets/js/jquery-2.1.3.min.js" type="text/javascript"></script>
-	<script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <title><?php if(isset($book_name)){echo $book_name;} ?> by: <?php if(isset($author)){echo $author;} ?></title>
+    <style type="text/css"></style>
+    <script src="<?php echo base_url(); ?>assets/js/jquery-2.1.3.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/stylesheets/style.css">
     <style>
         .starRating > label
         {
@@ -20,14 +29,6 @@
     </style>
 </head>
 <body>
-    <?php
-        $data = $this->Bookdb->book_info($id); 
-        foreach ($data as $row => $key) 
-        {
-            $book_name = $key->name;
-            $author = $key->author;
-        }
-    ?>
 	<nav class="navbar navbar-default">
 	    <div class="container-fluid">
 	    	<p class="navbar-text navbar-right"><a href='/books/logoff' class="navbar-link">Logout</a></p>

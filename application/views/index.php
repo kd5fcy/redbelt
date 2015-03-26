@@ -3,14 +3,14 @@
 <head>
 	<meta charset="utf-8">
 	<title>Login &#38; Registration</title>
-	<script src="<?php echo base_url(); ?>assets/js/jquery-2.1.3.min.js" tpye="text/javascript"></script>
-	<script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js" tpye="text/javascript"></script>
+	<style type="text/css"></style>
+	<script src="<?php echo base_url(); ?>assets/js/jquery-2.1.3.min.js" type="text/javascript"></script>
+	<script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css"> 
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/stylesheets/style.css">
 </head>
 <body>
-	<?php echo base_url(); ?>
 	<h2>Welcome!</h2>
 	<div id='register'>
 		<form action='/books/register' method='post' class="form-group">
