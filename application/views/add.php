@@ -55,10 +55,12 @@
     		<select id='authors' class="form-control" name='existing'>
           <option value=''>Add New Author</option>
     			<?php
+          if($this->session->userdata('user_id')){
     				foreach ($authors as $key => $value) {
     					echo "<option>" . $value . "</option>";
     				}
-    			?>
+    			}
+          ?>
     		</select>
     		<div class='conditional'>
           <input type="text" class="form-control" id='conditional' name='author'>
@@ -70,21 +72,18 @@
   		</div>
   		<label for='rating'>Rating:</label>
   			<span class="starRating">
-			  <input id="rating5" type="radio" name="rating" value=5>
+			  <input id="rating5" type="radio" name="rating" value="5">
 			  <label for="rating5">5</label>
-			  <input id="rating4" type="radio" name="rating" value=4>
+			  <input id="rating4" type="radio" name="rating" value="4">
 			  <label for="rating4">4</label>
-			  <input id="rating3" type="radio" name="rating" value=3>
+			  <input id="rating3" type="radio" name="rating" value="3">
 			  <label for="rating3">3</label>
-			  <input id="rating2" type="radio" name="rating" value=2>
+			  <input id="rating2" type="radio" name="rating" value="2">
 			  <label for="rating2">2</label>
-			  <input id="rating1" type="radio" name="rating" value=1 checked="checked">
+			  <input id="rating1" type="radio" name="rating" value="1" checked="checked">
 			  <label for="rating1">1</label>
 			</span>
   		<button type='submit' class="btn btn-default">Add Book and Review</button>
   	</form>
 </body>
 </html>
-<script>
-
-</script>

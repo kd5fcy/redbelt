@@ -2,22 +2,23 @@
 <html lang="en">
 <head>
     <?php
+    if($this->session->userdata('user_id')){
         $data = $this->Bookdb->book_info($id); 
         foreach ($data as $row => $key) 
         {
             $book_name = $key->name;
             $author = $key->author;
         }
+    }
     ?>
     <meta charset="utf-8">
     <title><?php if(isset($book_name)){echo $book_name;} ?> by: <?php if(isset($author)){echo $author;} ?></title>
-    <style type="text/css"></style>
     <script src="<?php echo base_url(); ?>assets/js/jquery-2.1.3.min.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/stylesheets/style.css">
-    <style>
+    <style type="text/css">
         .starRating > label
         {
             background      : url(<?php echo base_url(); ?>assets/images/star-off.svg);
@@ -42,6 +43,7 @@
         <div class="panel-body">
             <div class="panel-body">
             <?php
+            if($this->session->userdata('user_id')){
                 $star = '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>';
                 $nostar = '<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>';
                 $star1 = $star . $nostar . $nostar . $nostar . $nostar;
@@ -80,26 +82,27 @@
                         $delete = '';
                     }
                     echo "<span class='right'>" . $delete . "</span></p><hr>";
-                } 
+                }
+            } 
             ?> 
-  		</div><!--  id='add' class='form-horizontal' -->
+  		</div>
     </section>
     <aside class="panel panel-default">
         <form action='/books/update' method='post'>
             <label for="review">Add a Review:</label>
             <textarea class="form-control" rows='3' name='review'></textarea>
-            <input type='hidden' name='book_id' value='<?php echo $bookid; ?>'>
+            <input type='hidden' name='book_id' value='<?php if($this->session->userdata('user_id')){echo $bookid;} ?>'>
             <label for='rating'>Rating:</label>
                 <span class="starRating">
-                  <input id="rating5" type="radio" name="rating" value=5>
+                  <input id="rating5" type="radio" name="rating" value="5">
                   <label for="rating5">5</label>
-                  <input id="rating4" type="radio" name="rating" value=4>
+                  <input id="rating4" type="radio" name="rating" value="4">
                   <label for="rating4">4</label>
-                  <input id="rating3" type="radio" name="rating" value=3>
+                  <input id="rating3" type="radio" name="rating" value="3">
                   <label for="rating3">3</label>
-                  <input id="rating2" type="radio" name="rating" value=2>
+                  <input id="rating2" type="radio" name="rating" value="2">
                   <label for="rating2">2</label>
-                  <input id="rating1" type="radio" name="rating" value=1 checked="checked">
+                  <input id="rating1" type="radio" name="rating" value="1" checked="checked">
                   <label for="rating1">1</label>
                 </span>
             <button type='submit' class="btn btn-default">Submit Review</button>

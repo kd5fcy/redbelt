@@ -16,7 +16,7 @@
 	?>
 	<nav class="navbar navbar-default">
 	    <div class="container-fluid">
-	    	<h3 class="navbar-brand">Welcome, <?php echo $user['first_name']; ?></h3>
+	    	<h3 class="navbar-brand">Welcome, <?php if($this->session->userdata('user_id')){echo $user['first_name'];} ?></h3>
 	    	<p class="navbar-text navbar-right"><a href='/books/logoff' class="navbar-link">Logout</a></p>
 	    	<p class="navbar-text navbar-right"><a href='/books/add' class="navbar-link">Add Book and Review</a></p>
 	    </div>
@@ -24,7 +24,8 @@
     <section id="content" class="panel panel-default">
         <h4 class='panel-title'>Recent Book Reviews</h4>
         <div class="panel-body">
-            <?php    
+            <?php  
+            if($this->session->userdata('user_id')){  
                 $data = $this->Bookdb->review();
                 $star = '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>';
                 $nostar = '<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>';
@@ -44,17 +45,20 @@
                     $newdate = $date->format('F j, Y');
                     echo "<h5><a href='/books/book/" . $row->book . "'>" . $row->name . "</a><span class='attribute'> by: " . $row->author . "</span></h5><p>Rating: " . $stars . "</p><p><a href='/books/users/" . $row->id . "'>" . $row->first_name . "</a> says: " . $row->review . "</p><p>Posted on " . $newdate . "</p><hr>";
                 } 
+            }
             ?> 
   		</div>
     </section>
     <aside class="panel panel-default">
         <h4 class='panel-title'>Other Books with Reviews:</h4>
         <div class="panel-body">
-            <?php    
-            $list = $this->Bookdb->reviewed_books();
-            foreach ($list as $row) 
-            {
-                echo "<p><a href='/books/book/" . $row->id . "'>" . $row->name . "</a></p>";
+            <?php
+            if($this->session->userdata('user_id')){    
+                $list = $this->Bookdb->reviewed_books();
+                foreach ($list as $row) 
+                {
+                    echo "<p><a href='/books/book/" . $row->id . "'>" . $row->name . "</a></p>";
+                }
             }
             ?>
   		</div>
