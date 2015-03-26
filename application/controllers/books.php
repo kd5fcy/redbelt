@@ -11,7 +11,7 @@ class Books extends CI_Controller {
 	}
 	public function index()
 	{
-		$this->load->view('add');
+		$this->load->view('book');
 	}
 	public function users($id)
 	{
