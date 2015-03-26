@@ -36,7 +36,7 @@
 	    	<p class="navbar-text navbar-right"><a href='/books/view' class="navbar-link">Home</a></p>
 	    </div>
 	</nav>
-	<h2>Title:<?php if(isset($book_name)){echo $book_name;} ?></h2>
+	<h2>Title: <?php if(isset($book_name)){echo $book_name;} ?></h2>
 	<h3>Author: <?php if(isset($author)){echo $author;} ?></h3>
 	<section id="content" class="panel panel-default">
         <h4 class='panel-title'>Reviews:</h4>
