@@ -43,7 +43,7 @@ class Books extends CI_Controller {
 		}
 		else
 		{
-			$this->db->delete('books', array('id' => $this->session->flashdata('last_book')));
+			$this->db->delete('books', array('id' => $this->session->flashdata('book')));
 			redirect('/books/view');
 		}
 	}	
