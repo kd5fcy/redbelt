@@ -75,7 +75,7 @@
 			  <label for="rating3">3</label>
 			  <input id="rating2" type="radio" name="rating" value=2>
 			  <label for="rating2">2</label>
-			  <input id="rating1" type="radio" name="rating" value=1>
+			  <input id="rating1" type="radio" name="rating" value=1 checked="checked">
 			  <label for="rating1">1</label>
 			</span>
   		<button type='submit' class="btn btn-default">Add Book and Review</button>
