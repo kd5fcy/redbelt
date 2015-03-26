@@ -68,7 +68,7 @@
                         }
                         else
                         {
-                            $this->session->set_flashdata('last_book', '');
+                            $this->session->set_flashdata('book', $key->book_id);
                             $delete = "<a href='/books/delete/" . $key->id . "'>Delete this review</a>";
                         }
                     }  
