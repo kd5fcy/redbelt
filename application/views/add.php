@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/stylesheets/style.css">
 	<script>
 		$(document).ready(function(){
-      $('#authors').change(function()
+      $('#author').change(function()
       { 
         if($(this).val() == '')
         {
@@ -52,7 +52,7 @@
   		</div>
   		<div class="form-inline">
     		<label for="author">Author:</label>
-    		<select id='authors' class="form-control" id="author" name='existing'>
+    		<select class="form-control" id="author" name='existing'>
           <option value=''>Add New Author</option>
     			<?php
           if($this->session->userdata('user_id')){
@@ -70,8 +70,8 @@
     		<label for="review">Review:</label>
     		<textarea class="form-control" rows='4' id="review" name='review'></textarea>
   		</div>
-  		<label for='rating'>Rating:</label>
-  			<span class="starRating" id="rating">
+  		<label>Rating:</label>
+  			<span class="starRating">
 			  <input id="rating5" type="radio" name="rating" value="5">
 			  <label for="rating5">5</label>
 			  <input id="rating4" type="radio" name="rating" value="4">
