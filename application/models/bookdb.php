@@ -117,7 +117,7 @@ class Bookdb extends CI_Model {
 	}
 	public function book_info($id)
 	{
-		$query = "SELECT *, reviews.id, reviews.created_at FROM books JOIN reviews ON books.id = reviews.book_id JOIN users ON reviews.user_id = users.id WHERE books.id = $id";
+		$query = "SELECT *, reviews.id, reviews.created_at FROM books JOIN reviews ON books.id = reviews.book_id JOIN users ON reviews.user_id = users.id WHERE books.id = $id ORDER BY reviews.id DESC";
 		$temp = $this->db->query($query);
 		return $temp->result();
 	}
