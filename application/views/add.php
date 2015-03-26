@@ -48,11 +48,11 @@
 	<form action='/books/create' method='post' id='add' class='form-horizontal'>
 		<div class="form-horizontal">
     		<label for="title">Book Title:</label>
-    		<input type="text" class="form-control" name='title'>
+    		<input type="text" class="form-control" id="title" name='title'>
   		</div>
   		<div class="form-inline">
     		<label for="author">Author:</label>
-    		<select id='authors' class="form-control" name='existing'>
+    		<select id='authors' class="form-control" id="author" name='existing'>
           <option value=''>Add New Author</option>
     			<?php
           if($this->session->userdata('user_id')){
@@ -68,10 +68,10 @@
   		</div>
   		<div class="form-horizontal">
     		<label for="review">Review:</label>
-    		<textarea class="form-control" rows='4' name='review'></textarea>
+    		<textarea class="form-control" rows='4' id="review" name='review'></textarea>
   		</div>
   		<label for='rating'>Rating:</label>
-  			<span class="starRating">
+  			<span class="starRating" id="rating">
 			  <input id="rating5" type="radio" name="rating" value="5">
 			  <label for="rating5">5</label>
 			  <input id="rating4" type="radio" name="rating" value="4">
