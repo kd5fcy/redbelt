@@ -90,7 +90,7 @@ class Bookdb extends CI_Model {
 	}
 	public function book_count()
 	{
-		$query = "SELECT COUNT(reviews.user_id) as total FROM reviews JOIN books ON books.id = reviews.book_id WHERE reviews.user_id ='" . $this->session->userdata('user_id') . "'";
+		$query = "SELECT COUNT(reviews.id) as total FROM reviews JOIN users ON users.id = reviews.user_id WHERE reviews.user_id ='" . $this->session->userdata('user_id') . "'";
 		$temp = $this->db->query($query);
 		foreach ($temp->result() as $key => $value) 
 		{
