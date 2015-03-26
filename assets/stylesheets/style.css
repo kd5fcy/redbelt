@@ -1,0 +1,116 @@
+#register, #login
+{
+	width: 40%;
+	display: inline-block;
+	vertical-align: top;
+	border: 1px solid navy;
+	margin: 20px;
+	padding: 0 20px 20px 20px;
+}
+button
+{
+	margin: 10px;
+}
+#content
+{
+	width: 50%;
+	display: inline-block;
+}
+aside
+{
+	height: 200px;
+	overflow: scroll;
+	width: 30%;
+	display: inline-block;
+}
+.panel
+{
+	margin: 20px;
+	padding: 20px;
+	vertical-align: top;
+}
+#add
+{
+	margin: 20px;
+	padding: 20px;
+	width: 50%;
+}
+h4, h3, h2
+{
+	margin: 20px;
+}
+select, input, textarea
+{
+	margin: 10px;
+}
+.right 
+{
+	margin-left: 80px;
+}
+li
+{
+	list-style: none;
+}
+li:hover
+{
+	background-color: #F0F0F0;
+}
+legend
+{
+	padding: 5px;
+	color: navy;
+	position: relative;
+	background-color: white;
+	top: -20px;
+	border: 0;
+	z-index: 10;
+}
+.error
+{
+	color: red;
+}
+.starRating{
+  display        : inline-block;
+  width          : 7.5em;
+  height         : 1.5em;
+  overflow       : hidden;
+  vertical-align : bottom;
+}
+.starRating > input{
+  margin-right : -100%;
+  opacity      : 0;
+}
+.starRating > label{
+  display         : block;
+  float           : right;
+  position        : relative;
+  background-size : contain;
+}
+.starRating > label:before{
+  content         : '';
+  display         : block;
+  width           : 1.5em;
+  height          : 1.5em;
+  background-size : contain;
+  opacity         : 0;
+  transition      : opacity 0.2s linear;
+}
+.starRating > label:hover:before,
+.starRating > label:hover ~ label:before,
+.starRating:not(:hover) > :checked ~ label:before{
+  opacity : 1;
+}
+.glyphicon-star-empty
+{
+	color: grey;
+}
+.glyphicon-star
+{
+	color: #FFD900;
+}
+.attribute
+{
+	font-size: 12px;
+	font-weight: 400;
+	font-style: italic;
+}
