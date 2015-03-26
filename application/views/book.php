@@ -36,12 +36,11 @@
 	    	<p class="navbar-text navbar-right"><a href='/books/view' class="navbar-link">Home</a></p>
 	    </div>
 	</nav>
-	<h2><?php if(isset($book_name)){echo $book_name;} ?></h2>
+	<h2>Title:<?php if(isset($book_name)){echo $book_name;} ?></h2>
 	<h3>Author: <?php if(isset($author)){echo $author;} ?></h3>
 	<section id="content" class="panel panel-default">
         <h4 class='panel-title'>Reviews:</h4>
         <div class="panel-body">
-            <div class="panel-body">
             <?php
             if($this->session->userdata('user_id')){
                 $star = '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>';
@@ -90,9 +89,9 @@
     <aside class="panel panel-default">
         <form action='/books/update' method='post'>
             <label for="review">Add a Review:</label>
-            <textarea class="form-control" rows='3' name='review'></textarea>
+            <textarea class="form-control" id="review" rows='3' name='review'></textarea>
             <input type='hidden' name='book_id' value='<?php if($this->session->userdata('user_id')){echo $bookid;} ?>'>
-            <label for='rating'>Rating:</label>
+            <label>Rating:</label>
                 <span class="starRating">
                   <input id="rating5" type="radio" name="rating" value="5">
                   <label for="rating5">5</label>
