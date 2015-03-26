@@ -1,23 +1,20 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
 $active_group = 'default';
 $active_record = TRUE;
-
 if(ENVIRONMENT == 'production')
 {
 	$db['default']['hostname'] = '127.0.0.1';
 	$db['default']['username'] = 'kd5fcy';
-	$db['default']['password'] = 'GaNoMe.69';
+	$db['default']['password'] = 'dbpassword';
 	$db['default']['database'] = 'mydb';
 }
 else
 {
 	$db['default']['hostname'] = '127.0.0.1';
 	$db['default']['username'] = 'kd5fcy';
-	$db['default']['password'] = 'GaNoMe.69';
+	$db['default']['password'] = 'dbpassword';
 	$db['default']['database'] = 'mydb';
 }
-
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
@@ -29,5 +26,4 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
-
 //end of database.php
