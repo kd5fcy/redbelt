@@ -17,23 +17,23 @@
 			<fieldset>
 				<legend>New Users</legend>
 				<label for='first_name'>First Name:</label>
-				<input type='text' class="form-control" name='first_name' value="<?php echo set_value('first_name'); ?>">
+				<input type='text' class="form-control" id="first_name" name='first_name' value="<?php echo set_value('first_name'); ?>">
 				<?php echo "<span class='error'>" . form_error('first_name') . "</span>"; ?>
 				<label for='last_name'>Last Name:</label>
-				<input type='text' class="form-control" name='last_name' value="<?php echo set_value('last_name'); ?>">
+				<input type='text' class="form-control" id="last_name" name='last_name' value="<?php echo set_value('last_name'); ?>">
 				<?php echo "<span class='error'>" . form_error('last_name') . "</span>"; ?>
 				<label for='alias'>Alias:</label>
-				<input type='text' class="form-control" name='alias' value="<?php echo set_value('alias'); ?>">
+				<input type='text' class="form-control" id="alias" name='alias' value="<?php echo set_value('alias'); ?>">
 				<?php echo "<span class='error'>" . form_error('alias') . "</span>"; ?>
 				<label for='email'>Email:</label>
-				<input type='email' class="form-control" name='email' value="<?php echo set_value('email'); ?>">
+				<input type='email' class="form-control" id="email" name='email' value="<?php echo set_value('email'); ?>">
 				<?php echo "<span class='error'>" . form_error('email') . "</span>"; ?>
 				<label for='password'>Password:</label>
-				<input type='password' class="form-control" name='password' value="<?php echo set_value('password'); ?>">
+				<input type='password' class="form-control" id="password" name='password' value="<?php echo set_value('password'); ?>">
 				<?php echo "<span class='error'>" . form_error('password') . "</span>"; ?>
 				<p>*Password should be at least 8 characters.</p>
 				<label for='confirm'>Confirm Password:</label>
-				<input type='password' class="form-control" name='confirm'>
+				<input type='password' class="form-control" id="confirm" name='confirm'>
 				<?php echo "<span class='error'>" . form_error('confirm') . "</span>"; ?>
 				<button type='submit' class="btn btn-default">Register</button>
 			</fieldset>
@@ -44,10 +44,10 @@
 			<fieldset>
 				<legend>Existing Users</legend>
 				<label for='emaillogin'>Email:</label>
-				<input type='email' class="form-control" name='emaillogin' value="<?php echo set_value('emaillogin'); ?>">
+				<input type='email' class="form-control" id="emaillogin" name='emaillogin' value="<?php echo set_value('emaillogin'); ?>">
 				<?php if(isset($emailerror)){echo "<span class='error'>" . $emailerror . "</span>";} ?>
 				<label for='passwordlogin'>Password:</label>
-				<input type='password' class="form-control" name='passwordlogin'>
+				<input type='password' class="form-control" id="passwordlogin" name='passwordlogin'>
 				<?php if(isset($pwerror)){echo "<span class='error'>" . $pwerror . "</span>";} ?>
 				<button type='submit' class="btn btn-default">Login</button>
 			</fieldset>
