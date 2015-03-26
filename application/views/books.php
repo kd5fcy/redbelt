@@ -12,8 +12,10 @@
 </head>
 <body>
 	<?php 
+    if($this->session->userdata('user_id')){
 		$user = $this->Bookdb->user_info(); 
-	?>
+	}
+    ?>
 	<nav class="navbar navbar-default">
 	    <div class="container-fluid">
 	    	<h3 class="navbar-brand">Welcome, <?php if($this->session->userdata('user_id')){echo $user['first_name'];} ?></h3>
